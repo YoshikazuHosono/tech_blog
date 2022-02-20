@@ -12,8 +12,8 @@ jobs:
         with:
           fetch-depth: "2"
       - run: |
-          for file in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only) ; do
-            echo $(file)
+          for changedFile in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only) ; do
+            echo ${{changedFile}}
           done
       - run: echo "before hash ${{github.event.before}}"
       - run: echo "after hash ${{github.event.after}}"
