@@ -9,8 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          for file in $(git diff ${{github.event.before}} ${{github.event.after}} --name-only) ; do
-            echo $(file)
-          done
+      - run: git branch
       - run: echo "🍏 This job's status is ${{ job.status }}."
