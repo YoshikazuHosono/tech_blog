@@ -11,7 +11,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: "2"
-      - run: git diff ${{github.event.before}} ${{github.event.after}} --name-only
+      - run: |
+          for file in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only) ; do
+            echo $(file)
+          done
       - run: echo "before hash ${{github.event.before}}"
       - run: echo "after hash ${{github.event.after}}"
       - run: echo "🍏 This job's status is ${{ job.status }}."
