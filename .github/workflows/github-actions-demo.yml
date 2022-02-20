@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git pull
+        with:
+          fetch-depth: "2"
       - run: git log
       - run: echo "before hash ${{github.event.before}}"
       - run: echo "after hash ${{github.event.after}}"
