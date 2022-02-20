@@ -8,8 +8,5 @@ jobs:
   send-to-qiita:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          for file in $(git diff ${{github.event.before}} ${{github.event.after}} --name-only --diff-filter=A -- '*.md') ; do
-            echo ${file}
-          done
+      - run: echo $(git diff 92600a1ec009ac1e4585b0cd8894dc428c732a51 d5bbd9bd12e3c0e6f93a994c1eee72a7ef9a2ce8 --name-only --diff-filter=A -- '*.md')
       - run: echo "🍏 This job's status is ${{ job.status }}."
