@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          for file in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only --diff-filter=A -- '*.md') ; do
+          for file in $(git diff ${{github.event.before}} ${{github.event.after}} --name-only --diff-filter=A -- '*.md') ; do
             echo ${file}
           done
       - run: echo "🍏 This job's status is ${{ job.status }}."
