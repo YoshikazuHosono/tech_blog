@@ -13,8 +13,5 @@ jobs:
           fetch-depth: "2"
       - run: |
           for changedFile in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only --diff-filter=A -- '*.md') ; do
-            cat $changedFile
+            ./post.sh $changedFile
           done
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-# Authorization: Bearer 1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcd
-# 2f695590035c744f37a3c3ab04df2b3658b78814
