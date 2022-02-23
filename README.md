@@ -51,7 +51,7 @@ gh run list --limit 5
 
 # OKならmasterブランチに対してPRを作成して
 # UI : https://github.com/nac-care/nac_tech_blog/pulls > New pull request
-gh pr create --base master --title "hosono article : demo"
+gh pr create --base master --title "hosono article : demo" --body "hosono article : demo"
 
 # 誰かにレビューしてもらう
 
