@@ -1,0 +1,8 @@
+{
+  "filters": {},
+  "rules": {
+    "no-todo": true,
+    "preset-ja-spacing": true,
+    "preset-ja-technical-writing": true
+  }
+}
