@@ -1,4 +1,4 @@
-name: Send to Qiita
+name: textlint on push
 
 on: [push]
 

@@ -1,4 +1,4 @@
-name: Send to Qiita
+name: textlint on pr
 
 on:
   pull_request:
