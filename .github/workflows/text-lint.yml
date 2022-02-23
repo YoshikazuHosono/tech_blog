@@ -18,7 +18,7 @@ jobs:
         run: "npm install --save-dev textlint"
 
       - name: install textlint rule
-        run: "npm install --save-dev textlint-rule-preset-ja-technical-writing textlint-rule-preset-ja-spacing"
+        run: "npm install --save-dev textlint-rule-no-todo textlint-rule-preset-ja-technical-writing textlint-rule-preset-ja-spacing"
 
       - name: execute textlint
         run: "npx textlint blogs/*"
