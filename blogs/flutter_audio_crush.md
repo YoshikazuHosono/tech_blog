@@ -1,6 +1,6 @@
 ## はじめに
 
-`audioplayers`を使用して、複数の効果音を高速かつ連続で再生するという実装をしていました。
+`audioplayers` を使用して、複数の効果音を高速かつ連続で再生するという実装をしていました。
 
 すると、効果音の再生後しばらくすると再生が遅延したり、アプリがクラッシュする事象が発生しました。
 
@@ -67,9 +67,9 @@ Mac でのシミュレータ実行ではクラッシュしない場合があり�
 
 Timer を作成するボタン押下時の処理を、以下のように書き換えます。
 
-`soundList`の数だけ`AudioCache`を生成し、Map に変換して保持します。
+`soundList` の数だけ `AudioCache` を生成し、Map に変換して保持します。
 
-また`AudioCache`の引数`fixedPlayer`には、`AudioPlayer`のインスタンスを渡します。
+また `AudioCache` の引数 `fixedPlayer` には、 `AudioPlayer` のインスタンスを渡します。
 
 ```dart
             ElevatedButton(
@@ -100,11 +100,11 @@ Timer を作成するボタン押下時の処理を、以下のように書き�
 
 ## なぜクラッシュしなくなるのか
 
-`AudioCache.play`の実装を見てみます。
+`AudioCache.play` の実装を見てみます。
 
-`player`という変数に格納された`AudioPlayer`に対して、`play`メソッドを呼び出しています。
+`player` という変数に格納された `AudioPlayer` に対して、 `play` メソッドを呼び出しています。
 
-`get player`とコメントされた箇所で取得しているようなので、その中身を確認します。
+`get player` とコメントされた箇所で取得しているようなので、その中身を確認します。
 
 ```dart
   Future<AudioPlayer> play(
@@ -133,11 +133,11 @@ Timer を作成するボタン押下時の処理を、以下のように書き�
   }
 ```
 
-`_player`の実装です。
+`_player` の実装です。
 
-引数から`fixedPlayer`を受け取っていない場合、`play`される度に`AudioPlayer`インスタンスが新規生成されて使用されます。
+引数から `fixedPlayer` を受け取っていない場合、 `play` される度に `AudioPlayer` インスタンスが新規生成されて使用されます。
 
-今回のように高速で何度も`play`メソッドを呼び出す場合に、この処理はメモリ不足を引き起こし、クラッシュや再生の遅延などを発生させていました。
+今回のように高速で何度も `play` メソッドを呼び出す場合に、この処理はメモリ不足を引き起こし、クラッシュや再生の遅延などを発生させていました。
 
 ```dart
   AudioPlayer _player(PlayerMode mode) {
