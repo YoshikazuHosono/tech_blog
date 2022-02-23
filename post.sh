@@ -15,8 +15,8 @@ if [ ! -e ${1}.json ];then
   exit 1
 fi
 
-curl -X POST \
-	-H "Content-Type: application/json" \
-	-H "Authorization: Bearer `cat ${1}.json | jq .token -r`" \
-	-d "{\"body\":`cat ${1} | jq @text -Rs`, \"tags\":`cat ${1}.json | jq .tags | jq @json -r`, \"title\":`cat ${1}.json | jq .title`}" \
-	https://qiita.com/api/v2/items
+# curl -X POST \
+# 	-H "Content-Type: application/json" \
+# 	-H "Authorization: Bearer `cat ${1}.json | jq .token -r`" \
+# 	-d "{\"body\":`cat ${1} | jq @text -Rs`, \"tags\":`cat ${1}.json | jq .tags | jq @json -r`, \"title\":`cat ${1}.json | jq .title`}" \
+# 	https://qiita.com/api/v2/items
