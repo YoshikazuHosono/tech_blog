@@ -1,20 +1,26 @@
-name: textlint on pr
+name: textlint on push
 
-on:
-  pull_request:
-    branches: [master]
+on: [push]
 
 jobs:
   text-lint:
     runs-on: ubuntu-latest
     steps:
+      - name: dog-setup
+        uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
+
       - name: checkout-target-repo
         uses: actions/checkout@v2
 
-      - name: textlint-github-pr-review
-        uses: tsuyoshicho/action-textlint@v3
-        with:
-          github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review
-          level: warning
-          textlint_flags: "blogs/**"
+      - name: execute-textlint
+        run: |
+          npx textlint -f checkstyle blogs/* >> .textlint.log
+
+      - name: run-dog
+        if: failure()
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat .textlint.log | reviewdog -f=checkstyle -name="textlint" -reporter="github-pr-review"
