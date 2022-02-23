@@ -1,0 +1,13 @@
+name: Send to Qiita
+
+on: [push]
+
+jobs:
+  text-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-target-repo
+        uses: actions/checkout@v2
+
+      - name: execute-textlint
+        run: "npx textlint blogs/*"
