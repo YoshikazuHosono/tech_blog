@@ -1,0 +1,17 @@
+name: Send to Qiita
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  send-to-qiita:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: "2"
+      - run: |
+          for changedFile in $(git diff ${{github.event.before}}..${{github.event.after}} --name-only --diff-filter=A -- '*.md') ; do
+            ./post.sh $changedFile
+          done
