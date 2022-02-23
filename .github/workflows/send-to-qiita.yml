@@ -2,7 +2,7 @@ name: Send to Qiita
 
 on:
   push:
-    branches: [cicd_sample]
+    branches: [master]
 
 jobs:
   text-lint:
