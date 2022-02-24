@@ -11,3 +11,6 @@ jobs:
 
       - name: execute-textlint
         run: "npx textlint blogs/*"
+
+      - name: execute-textlint-4-zenn
+        run: "npx textlint articles/*"
