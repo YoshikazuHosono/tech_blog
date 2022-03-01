@@ -45,12 +45,12 @@ final soundList = [
             ElevatedButton(
                 onPressed: () {
                   var audioCache = AudioCache();
-                  crushTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+                  crashTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
                     final idx = Random().nextInt(soundList.length);
                     audioCache.play(soundList[idx]);
                   });
                 },
-                child: const Text("play crush sound")
+                child: const Text("play crash sound")
             ),
 ```
 
@@ -59,9 +59,9 @@ final soundList = [
 ```dart
             ElevatedButton(
                 onPressed: () {
-                  crushTimer?.cancel();
+                  crashTimer?.cancel();
                 },
-                child: const Text("stop crush sound")
+                child: const Text("stop crash sound")
             ),
 ```
 
@@ -86,12 +86,12 @@ Timer を作成するボタン押下時の処理を、以下のように書き�
                       soundList,
                       soundList.map((e) => AudioCache(fixedPlayer: AudioPlayer())).toList()
                   );
-                  noCrushTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
+                  noCrashTimer = Timer.periodic(const Duration(milliseconds: 100), (timer) {
                     final idx = Random().nextInt(soundList.length);
                     audioMap[soundList[idx]]?.play(soundList[idx]);
                   });
                 },
-                child: const Text("play no crush sound")
+                child: const Text("play no crash sound")
             ),
 ```
 
@@ -100,9 +100,9 @@ Timer を作成するボタン押下時の処理を、以下のように書き�
 ```dart
             ElevatedButton(
                 onPressed: () {
-                  crushTimer?.cancel();
+                  crashTimer?.cancel();
                 },
-                child: const Text("stop crush sound")
+                child: const Text("stop crash sound")
             ),
 ```
 
