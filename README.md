@@ -23,54 +23,59 @@
 
 ## 事前準備
 
-1. github に、記事投稿用のリポジトリを作成
+- github に、記事投稿用のリポジトリを作成
 
-2. このリポジトリを落としてくる
+- このリポジトリを落としてくる
 
 ```sh
 git clone https://github.com/YoshikazuHosono/tech_blog.git
 ```
 
-1. 移動して
+- 移動して
 
 ```sh
 cd tech_blog
 ```
 
-1. リモートが細野環境なので削除
+- リモートが細野環境なので削除
 
 ```sh
 git remote remove origin
 ```
 
-1. 自分の remote を設定
+- 自分の remote を設定
 
 ```sh
 git remote add origin <自分のリポジトリ URL>
 ```
 
-1. 一回 push しとこ
+- 一回 push しとこ
 
 ```sh
 git push --set-upstream origin master
 ```
 
-1. [Zenn](https://zenn.dev/) にアクセス(アカウントなかったら作って)
+- [Zenn](https://zenn.dev/) にアクセス(アカウントなかったら作って)
 
-1. [Zenn : 自動デプロイ設定](https://zenn.dev/dashboard/deploys)にアクセス
-   ![デプロイ設定画面](./assets/zenn_deploy_setting.png)
+- [Zenn : 自動デプロイ設定](https://zenn.dev/dashboard/deploys)にアクセス
 
-1. `リポジトリを連携する`ボタンを押して、`連携へ進む`ボタンを押す
-   ![デプロイ設定画面](./assets/zenn_confirm.png)
+  ![デプロイ設定画面](./assets/zenn_deploy_setting.png)
 
-1. 自分のアカウントを選択
-   ![デプロイ設定画面](./assets/github_select_account.png)
+- `リポジトリを連携する`ボタンを押して、`連携へ進む`ボタンを押す
 
-1. `only select repository`にチェックし、さっき作った記事投稿用のリポジトリを選択
-   ![デプロイ設定画面](./assets/github_select_repo.png)
+  ![デプロイ設定画面](./assets/zenn_confirm.png)
 
-1. `Install & Authorize`ボタンを押して、以下の画面になったら OK
-   ![デプロイ設定画面](./assets/zenn_success.png)
+- 自分のアカウントを選択
+
+  ![デプロイ設定画面](./assets/github_select_account.png)
+
+- `only select repository`にチェックし、さっき作った記事投稿用のリポジトリを選択
+
+  ![デプロイ設定画面](./assets/github_select_repo.png)
+
+- `Install & Authorize`ボタンを押して、以下の画面になったら OK
+
+  ![デプロイ設定画面](./assets/zenn_success.png)
 
 ---
 
