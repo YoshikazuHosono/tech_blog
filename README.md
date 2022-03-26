@@ -1,4 +1,4 @@
-# nac_tech_blog
+# tech_blog
 
 ---
 
@@ -10,7 +10,7 @@
 
 ## 執筆する環境
 
-とりあえずホソノ環境を書いとく
+ホソノ環境
 
 エディタ
 
@@ -59,9 +59,3 @@ gh pr create --base master --title "hosono article : demo" --body "hosono articl
 
 # 記事が投稿される
 ```
-
----
-
-## りんく
-
-- hogehoge <https://gitlab.com/naccare/biz-solutions/tech-div>
