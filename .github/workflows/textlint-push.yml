@@ -9,8 +9,8 @@ jobs:
       - name: checkout-target-repo
         uses: actions/checkout@v2
 
-      - name: execute-textlint
-        run: "npx textlint blogs/*"
+      - name: npm-install
+        run: "npm i"
 
-      - name: execute-textlint-4-zenn
+      - name: execute-textlint
         run: "npx textlint articles/*"
